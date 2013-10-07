@@ -1,34 +1,87 @@
+# Overview
+
+[![Code Climate GPA](https://codeclimate.com/github/gnip/search-api-demo-webapp.png)](https://codeclimate.com/github/gnip/search-api-demo-webapp)
+[![Travis CI Status](https://secure.travis-ci.org/gnip/search-api-demo-webapp.png)](http://travis-ci.org/gnip/search-api-demo-webapp)
+
 ![Gnip Search Demo](search-demo.gif)
 
-## Purpose
 Gnip has built this internal app on top of its Search API product for demo purposes,
 in order to visually highlight the product's functionality and the type of interface
 that Gnip customers could build into their products to leverage the Search API for
 internal use or exposure to their clients.
 
-## Setup
-To run the application, you must set the following environment variables: `GNIP_ACCOUNT`, `GNIP_STREAM_NAME`, `GNIP_USERNAME`, and `GNIP_PASSWORD`
+# Features
 
-For the mapping feature, you must also set `MAPBOX_API_KEY` in [main.coffee](app/assets/javascripts/main.coffee) to your API key. You can get one at [mapbox.com](http://www.mapbox.com/).
+* Single, one-page Search UI.
+* CoffeeScript and SASS source map debugging support.
 
-## Development
-This project depends on MRI 2.0.0 and Rails 4.0.0.
+# Requirements
 
-The demo works on browsers IE9+. Don't even try IE8, seriously, it's not pretty.
+0. [Ruby 2.0.x](http://www.ruby-lang.org).
+0. [Ruby on Rails 4.0.x](http://rubyonrails.org).
+0. All major browsers + Internet Explorer 9+. Don't even try IE8, seriously, it's not pretty.
 
-Running tests: `rake spec`
-Running features: `rake cucumber`
-Running Jasmine tests: `rake spec:javascript`
+# Setup
 
-Guard will automatically run Cucumber, RSpec, and CoffeeScript transpiling; just run `guard`. Sorry, no auto-jasmine yet.
+Open a terminal window and execute the following commands:
 
-The app has source maps support so we can debug our CoffeeScript and Sass and minified jQuery.
+Current Version (stable)
 
-To run, just execute `rails s`.
+    git clone git://github.com/gnip/search-api-demo-webapp.git
+    cd search-api-demo-webapp
+    git checkout v1.0.0
 
-## Brought to you by:
-* [https://github.com/eriwen](Eric Wendelin)
-* [https://github.com/bkuhlmann](Brooke Kuhlmann)
-* [https://github.com/calebdoxsey](Caleb Doxsey)
+Master Version (unstable)
 
-@ [http://gnip.com/](Gnip)
+    git clone git://github.com/gnip/search-api-demo-webapp.git
+    cd search-api-demo-webapp
+
+Ensure the following environment variables are set:
+
+* GNIP_ACCOUNT = Your Gnip account.
+* GNIP_STREAM_NAME = Your Gnip stream name.
+* GNIP_USERNAME = Your Gnip username.
+* GNIP_PASSWORD = Your Gnip password.
+* MAPBOX_API_KEY = Apply your API key within [main.coffee](app/assets/javascripts/main.coffee).
+  If you need a key, you can get one at [mapbox.com](http://www.mapbox.com).
+
+# Usage
+
+To run, execute `rails s`.
+
+# Testing
+
+To test, do the following:
+
+0. Tests: `rake spec`
+0. Features: `rake cucumber`
+0. Jasmine Tests: `rake spec:javascript`
+
+NOTE: Guard will automatically run Cucumber, RSpec, and CoffeeScript (sorry, no auto-jasmine yet).
+
+# Versioning
+
+Read [Semantic Versioning](http://semver.org) for details. Briefly, it means:
+
+* Patch (x.y.Z) - Incremented for small, backwards compatible bug fixes.
+* Minor (x.Y.z) - Incremented for new, backwards compatible public API enhancements and/or bug fixes.
+* Major (X.y.z) - Incremented for any backwards incompatible public API changes.
+
+# Contributions
+
+Read CONTRIBUTING for details.
+
+# Credits
+
+* [Eric Wendelin](https://github.com/eriwen)
+* [Brooke Kuhlmann](https://github.com/bkuhlmann)
+* [Caleb Doxsey](https://github.com/calebdoxsey)
+
+# License
+
+Copyright (c) 2013 [Gnip](http://gnip.com).
+Read the LICENSE for details.
+
+# History
+
+Read the CHANGELOG for details.
