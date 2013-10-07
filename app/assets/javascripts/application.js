@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require highcharts
+//= require mapbox
+//= require leaflet.markercluster
+//= require moment
+//= require viewBase
+//= require activitiesHeader
+//= require activityList
+//= require chartHeader
+//= require chart
+//= require activityMap
+//= require searchData
+//= require searchForm
+//= require main

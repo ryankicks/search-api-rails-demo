@@ -1,0 +1,3 @@
+---
+default: --profile json
+json: --format json --out=cucumber-output.json

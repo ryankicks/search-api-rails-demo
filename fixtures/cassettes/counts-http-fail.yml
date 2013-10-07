@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<GNIP_USERNAME>:<GNIP_PASSWORD>@search.gnip.com/accounts/<GNIP_ACCOUNT>/search/search/counts.json
+    body:
+      encoding: UTF-8
+      string: '{"query":"gnip","publisher":"twitter","bucket":"hour"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '54'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version:
+  recorded_at: Fri, 04 Oct 2013 17:41:42 GMT
+recorded_with: VCR 2.5.0

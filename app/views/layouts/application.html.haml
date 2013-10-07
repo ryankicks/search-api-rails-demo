@@ -1,0 +1,10 @@
+!!! 5
+%html{lang: 'en'}
+  %head
+    %meta{charset: "utf-8"}
+    %title Gnip Search
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+  %body
+    = yield
+    = javascript_include_tag "application"

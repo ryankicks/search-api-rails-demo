@@ -1,0 +1,10 @@
+/*
+ *= require_self
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require mapbox
+ *= require MarkerCluster
+ *= require MarkerCluster.Default
+ *= require main
+ *= require activityMap
+ */

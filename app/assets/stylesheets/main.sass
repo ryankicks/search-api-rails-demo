@@ -1,0 +1,205 @@
+@import mixins
+
+html
+  font-size: 16px
+
+body
+  font-family: "helvetica neue", sans-serif
+  font-weight: 300
+  margin: 0
+
+.page-header
+  background-color: #f7f7f7
+  margin: 0
+  padding: 10px
+  .brand
+    background: transparent url('data:image/gif;base64,R0lGODdhLwAQAPU7AMzMzMvLy7CwsLKysra2trW1tcPDw8rKyrS0tOjo6Lq6uvX19bGxsdDQ0Onp6c3NzcLCwru7u+Pj48TExN7e3uvr693d3ezs7NfX18jIyOrq6ubm5s/Pz7m5ucHBwcDAwNbW1vDw8O3t7b+/v7e3t/T09OHh4fLy8sXFxcfHx7Ozs+fn5729vc7Ozr6+vri4uPPz87y8vNHR0dnZ2eTk5N/f39jY2OLi4vb29q+vr/f39/Hx8QAAAAAAAAAAAAAAACwAAAAALwAQAEAG/0CdcFEzFAoEgoGyEDp1F04EWVA0Kk9hiQJJFkjLpjDHwWXPjdxAdM46XrlHOxsYSAaHufAh4IwQCXoJBCMNAgB6OgECGzoAOSBmWTgYOYgOCC4XbRcjKoGPGJJPlHFNJxM5BxpPGgACBjtCFAwRFjBOMBYdORZCOwaHrE4OrxOyCAZicwsZOTk0iTp3OSjSOBAKEwNYehUkzy3SaTkE3XMOBQG/j0oBAAYElrJOEhE5MRkPGSw5ESZPdjwoByFAAAgF4tATcuIVgg8HDngoICDAQh03OgxQkAJACo0dADrZAYABAg8RPSA4RA/HIxBzKq3TkGnTGREsEDhQBCmmJXscBrglugAuh7hE5MwlSneAzKg5adZIexNHmiKTyhKVcCZAgjRq1hJhU3Anj55XDT58EvRQxqFEBwSs0LEjVYAEoxIEyDEhxCwGCiws3GFBAQMKvwxYwisER4Kmx0itABBhAOAAG54KCWEDoYACEGb4nbQhgOEBETCPCgIAOw==') no-repeat center left
+    color: #999
+    font-size: 1.25rem
+    padding-left: 55px
+    vertical-align: text-top
+    &:hover
+      text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+  color: #666
+  font-family: "helvetica neue", sans-serif
+  font-weight: 300
+  margin: 0
+
+.search-container
+  margin: 0 auto
+  height: 100%
+  width: 600px
+
+.search-form
+  +transition((margin 400ms ease))
+  margin: 100px auto 10px
+  position: relative
+  height: 30px
+  input
+    font-size: 20px
+    height: 30px
+    line-height: 30px
+    padding-left: 5px
+    width: 99%
+    &.error
+      outline-color: red
+  .icon-search
+    opacity: 0.5
+    position: absolute
+    top: 10px
+    right: 5px
+  .error-message
+    color: red
+    font-style: italic
+    margin-top: 0.3rem
+  &.collapsed
+    margin: 30px auto 10px
+
+.activities-header, .chart-header, .activities-list, .activities-chart, .map-container
+  opacity: 0.01
+  +perspective(400px)
+  +perspective-origin(50% 50%)
+  +transform-origin(0% 100%)
+  +transform(rotateX(-80deg))
+
+.activities-header, .chart-header
+  +transition((all 200ms ease, opacity 100ms ease))
+  margin: 15px 0 0
+  padding-bottom: 5px
+  .subheader
+    color: #999
+    margin-top: -5px
+
+.activities-chart, .activities-list
+  +transition((all 500ms ease 100ms, opacity 250ms ease 250ms))
+
+.flip-in
+  opacity: 1
+  +transform-origin(0% 0%)
+  +transform(translateZ(0px))
+
+.activities-header
+  border-bottom: 1px solid #CCC
+
+.activities-list
+  list-style: none
+  height: 250px
+  margin: 0
+  overflow: auto
+  // FIXME: this is a terrible hack... use flexbox
+  // height of all other items is 472px
+  @media only screen and (min-height: 800px) and (max-height: 899px)
+    height: 328px
+  @media only screen and (min-height: 900px) and (max-height: 999px)
+    height: 428px
+  @media only screen and (min-height: 1000px) and (max-height: 1099px)
+    height: 528px
+  @media only screen and (min-height: 1100px) and (max-height: 1199px)
+    height: 628px
+  @media only screen and (min-height: 1200px) and (max-height: 1299px)
+    height: 728px
+  @media only screen and (min-height: 1300px) and (max-height: 1399px)
+    height: 828px
+  @media only screen and (min-height: 1400px)
+    height: 928px
+
+.template
+  display: none
+
+.activity
+  border: 1px solid #ccc
+  border-width: 0 0 1px 0
+  clear: both
+  padding: 9px 12px
+  &:hover
+    background-color: #F6F6F6
+    .activity-details-label
+      color: #0A8CCE
+  .content
+    margin-left: 58px
+    min-height: 58px
+  .avatar
+    border-radius: 9px
+    float: left
+    margin-top: 3px
+    margin-left: -58px
+    width: 50px
+  .klout-score
+    color: #FFF
+    font-size: 12px
+    font-weight: bold
+    text-align: center
+    background: image-url("icons/klout_score_flag-24x24.png") no-repeat
+    background-size: 24px 24px
+    float: left
+    height: 24px
+    margin-top: 39px
+    margin-left: -68px
+    width: 24px
+  .klout-score:empty
+    display: none
+  .fullname
+    color: #333
+  .username
+    color: #999
+  .time
+    color: #bbb
+    float: right
+    font-size: 12px
+  .tweet-text
+    white-space: pre-wrap
+    word-wrap: break-word
+  .activity-details-label
+    color: #999
+    cursor: pointer
+    font-size: 12px
+    margin-top: 10px
+  .activity-details-content
+    display: none
+    margin-top: 10px
+  .klout-topics
+    font-size: 12px
+    overflow: hidden
+    margin-left: 30px
+    height: 20px
+
+    &:before
+      content: " "
+      background: image-url("icons/klout-26x20.png") no-repeat
+      background-size: 26px 20px
+      position: absolute
+      width: 26px
+      height: 20px
+      margin-left: -30px
+
+    &:empty
+      display: none
+  .profile-location
+    font-size: 12px
+    overflow: hidden
+    height: 20px
+
+    &:before
+      display: inline-block
+      content: ""
+      background: image-url("icons/pushpin-26x20.png") no-repeat
+      background-size: 26px 20px
+      width: 26px
+      height: 20px
+
+    &:empty
+      display: none
+
+.leaflet-popup-content .activity
+  border: none
+
+  &:hover
+    background: white
+
+.no-activities
+  color: #666
+  font-size: 3rem
+  line-height: 3rem
+  text-align: center

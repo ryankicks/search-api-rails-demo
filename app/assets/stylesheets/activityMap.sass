@@ -1,0 +1,27 @@
+.map-container
+  position: relative
+
+.activities-map
+  overflow: hidden
+  &.is-closed
+    height: 0
+  &.is-open
+    height: auto
+
+.map
+  height: 300px
+  margin: 0 0 20px
+
+.marker-cluster-small, .marker-cluster-medium, .marker-cluster-large, .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div
+  background: rgba(0, 73, 181, 0.53)
+  color: white
+
+.activities-map-controls
+  position: absolute
+  top: -25px
+  right: 0
+
+.toggle-activity-map
+  font-size: 16px
+  background: transparent image-url("icons/globe-16x16.png") 0 2px no-repeat
+  padding-left: 20px

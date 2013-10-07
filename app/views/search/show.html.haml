@@ -1,0 +1,57 @@
+%header.page-header
+  .container
+    .row
+      %a.brand{href: 'http://gnip.com'} Gnip
+
+.search-container
+  %form.search-form#search-form{action: '/search', data: {}}
+    %input#q{name: 'q', autofocus: true, autocomplete: false}
+    %i.icon-search
+  %header.chart-header#chart-header
+    %h2 Activity Volume
+    %h5.subheader
+  .chart-container#chart-container
+    .activities-chart#activities-chart
+  %header.activities-header#activities-header
+    %h2
+      Activities
+    %h5.subheader
+      %span.js-activities-count
+      %span.js-activities-date-range
+  .map-container#map-container
+    .activities-map-controls
+      %a.toggle-activity-map{href: '#'} Show Map
+    .activities-map#activities-map{class: 'is-closed'}
+      .map#map
+  .activities-container#activities-container
+    %ul#activities-list.activities-list
+
+#tweet-template.template
+  %li.activity.tweet
+    .content.js-content
+      %header.tweet-header
+        %a.account-group
+          %img.avatar.js-avatar
+          .klout-score
+          %strong.fullname.js-fullname
+          %a.username.js-username{target: '_blank'}
+        %a.time.js-relative-timestamp{target: '_blank'}
+      .tweet-text.js-tweet-text.js-activity-details
+      %a.activity-details-label.js-activity-details Details
+      .activity-details-content.js-activity-details-content
+        .klout-topics
+        %a.profile-location{href: '#'}
+
+#tweet-popup-template.template
+  .activity.tweet
+    .content
+      %header.tweet-header
+        %a.account-group
+          %img.avatar.js-avatar
+          .klout-score
+          %span.username.js-username
+          %strong.fullname.js-fullname
+        %small.time.js-relative-timestamp
+      .tweet-text.js-tweet-text
+      .klout-topics
+      .profile-location
