@@ -27,11 +27,11 @@ in order to contribute back.
 5. Ensure all tests pass.
 6. Push your fork and submit a pull request.
 
-# Contributing Issues (lazy, but sometimes necessary, option)
+# Contributing Issues
 
 1. Submit an issue via the GitHub Issues tab (assuming one does not already exist).
 2. Clearly describe the issue (including steps to reproduce).
-3. Specify your enviroment setup (OS, browser, language, etc. with version info).
+3. Specify your environment setup (OS, browser, language, etc. with version info).
 4. Provide a stack dump (if possible).
 5. Explain any additional details that might help diagnose the problem quickly.
 

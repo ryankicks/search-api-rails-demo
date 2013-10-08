@@ -8,7 +8,8 @@
 Gnip has built this internal app on top of its Search API product for demo purposes,
 in order to visually highlight the product's functionality and the type of interface
 that Gnip customers could build into their products to leverage the Search API for
-internal use or exposure to their clients.
+internal use or exposure to their clients. This is not an official, supported application.
+Please do not contact support with any requests regarding this project.
 
 # Features
 
