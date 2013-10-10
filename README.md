@@ -1,7 +1,7 @@
 # Overview
 
-[![Code Climate GPA](https://codeclimate.com/github/gnip/search-api-demo-webapp.png)](https://codeclimate.com/github/gnip/search-api-demo-webapp)
-[![Travis CI Status](https://secure.travis-ci.org/gnip/search-api-demo-webapp.png)](http://travis-ci.org/gnip/search-api-demo-webapp)
+[![Code Climate GPA](https://codeclimate.com/github/gnip/search-api-rails-demo.png)](https://codeclimate.com/github/gnip/search-api-rails-demo)
+[![Travis CI Status](https://secure.travis-ci.org/gnip/search-api-rails-demo.png)](http://travis-ci.org/gnip/search-api-rails-demo)
 
 ![Gnip Search Demo](search-demo.gif)
 
@@ -28,14 +28,14 @@ Open a terminal window and execute the following commands:
 
 Current Version (stable)
 
-    git clone git://github.com/gnip/search-api-demo-webapp.git
-    cd search-api-demo-webapp
+    git clone git://github.com/gnip/search-api-rails-demo.git
+    cd search-api-rails-demo
     git checkout v1.0.0
 
 Master Version (unstable)
 
-    git clone git://github.com/gnip/search-api-demo-webapp.git
-    cd search-api-demo-webapp
+    git clone git://github.com/gnip/search-api-rails-demo.git
+    cd search-api-rails-demo
 
 Ensure the following environment variables are set:
 
