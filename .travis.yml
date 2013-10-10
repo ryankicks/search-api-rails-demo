@@ -2,6 +2,8 @@
 language: ruby
 rvm:
 - 2.0.0
+env:
+  - GNIP_ACCOUNT=account GNIP_STREAM_NAME=search GNIP_USERNAME=username GNIP_PASSWORD=password
 script: bundle exec rspec spec
 notifications:
   email: false
