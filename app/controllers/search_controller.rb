@@ -9,12 +9,20 @@ class SearchController < ApplicationController
   end
 
   def activities
-    activities = Gnip::SearchService.activities_for params[:q], from: params[:from], to: params[:to]
-    render json: Yajl::Encoder.encode(activities, {html_safe?: true})
+    render_json get_search_results('activities_for', params)
   end
 
   def counts
-    counts = Gnip::SearchService.counts_for params[:q], from: params[:from], to: params[:to]
-    render json: Yajl::Encoder.encode(counts, {html_safe?: true})
+    render_json get_search_results('counts_for', params)
+  end
+
+  private
+
+  def get_search_results method_name, params
+    Gnip::SearchService.send method_name, params[:q], from: params[:from], to: params[:to]
+  end
+
+  def render_json hash
+    render json: Yajl::Encoder.encode(hash, {html_safe?: true})
   end
 end
