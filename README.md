@@ -18,9 +18,10 @@ Please do not contact support with any requests regarding this project.
 
 # Requirements
 
-0. [Ruby 2.0.x](http://www.ruby-lang.org).
-0. [Ruby on Rails 4.0.x](http://rubyonrails.org).
-0. All major browsers + Internet Explorer 9+. Don't even try IE8, seriously, it's not pretty.
+1. [Ruby 2.0.x](http://www.ruby-lang.org).
+2. [Ruby on Rails 4.0.x](http://rubyonrails.org).
+3. All major browsers + Internet Explorer 9+. Don't even try IE8, seriously, it's not pretty.
+4. You may need Python on your `PATH` to install some dependencies
 
 # Setup
 
@@ -48,7 +49,7 @@ Ensure the following environment variables are set:
 
 # Usage
 
-To run, execute `rails s`.
+To run, execute `bundle install` and then `rails s`.
 
 # Testing
 
