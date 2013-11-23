@@ -62,6 +62,7 @@ this.ActivityList = class ActivityList extends ViewBase
     $fragment.find('img.js-avatar').attr 'src', actor.image
     if activity.gnip.klout_score
       $fragment.find('.klout-score').text activity.gnip.klout_score
+    if activity.gnip.klout_profile
       $fragment.find('.klout-topics').text activity.gnip.klout_profile.topics.map((topic) -> topic.displayName).join(', ')
     if activity.gnip.profileLocations
       geoDetails = ''
