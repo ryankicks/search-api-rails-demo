@@ -14,11 +14,12 @@ gem "coffee-rails"
 gem "bootstrap-sass", "~> 2.3.2.0"
 gem "uglifier"
 
+
 group :development, :test do
+  gem "vcr", "~> 2.5.0"
+  gem "webmock", "~> 1.11.0", :require => false
   gem "rspec-rails"
   gem "cucumber-rails", :require => false
-  gem "vcr", "~> 2.5.0"
-  gem "webmock", "~> 1.11.0"
   gem "pry"
   gem "pry-byebug"
   gem "pry-remote"
