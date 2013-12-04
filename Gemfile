@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 # Application
 gem "rake"
-gem "rails", "4.0.0"
+gem "rails", "~> 4.0.2"
 gem "rest-client", "~> 1.6.7"
 gem "yajl-ruby", "~> 1.1.0"
 
