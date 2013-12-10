@@ -23,5 +23,14 @@
 
 .toggle-activity-map
   font-size: 16px
-  background: transparent image-url("icons/globe-16x16.png") 0 2px no-repeat
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QkeFTUvzK95+AAAAiFJREFUKM9tkl1IU3EYxp/zP2cT5qikVlm0KDOigmUfgpDWog8Vg9EHGgQhbGSLUCO7KLQvGmVQMwqWkyKYRseL5U1DlKwIFl1MV9HHWmCRJTbaqrl19vV24Wxnrt/V+748z/v+//BwRAQZ17wR28Cw79M4iJZpNfX6ktZNs+QC7p/B+jLafM6BRfMQCK0qXfnu83dMRpGnRDB8wlh9Zasmy7DuutvrG3tt3bdGSG/q9icOWu4DgMCgUKhm509aqgCAiOy+JMy9JKNOfIMmZ23v+whRud0DUw/M4rHBr0QEIsJ++/HBL5SD+eHoVNEx8humHtQ7iIjd8RMWFly9+wg53KxaCuD002+NnS5wPFR5be6gcHvIiySBMfyPSy8CFsdjcDwAJFIXulx8UGeIhSVwNC6oa4oL5GoCKlqd4IXMSIpPL2b8rQfPXRPpbiiAJz/At/RBqZxxk9vcOfxs5AMSBACU7L94YKcG3G4bihZwPKOwJNMC8QQzbtNlPsDxu07dA+ARG/Rrl9CfGCiZMQjsjLGaHSriEAhlpoznGsT1R7rb9mzExM/tZauhYGlbRDpbNocjoi5/ytThRCyZ9VgFO1pTeqNSC6BvDIbzYmNduVVfyAAYVzBd8WIo+SzDr0hzpRZACDBcdqrmqq36wpzwtYsoUCOeAhEkyVxb0f9q9KP7bUvT3vYtmplpnY531DbgmYr3cu38wzs2nCzJlwv+ArXnBuS/mBPwAAAAAElFTkSuQmCC")
+  background-position: 0 2px
+  background-repeat: no-repeat
   padding-left: 20px
+
+.leaflet-popup-content
+  margin: 0 9px 0 3px
+  .tweet:hover
+    background: white
+  .klout-topics, .profile-location
+    display: none

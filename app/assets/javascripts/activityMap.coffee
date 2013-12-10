@@ -46,10 +46,9 @@ this.ActivityMap = class ActivityMap extends ViewBase
     point = L.latLng(location.geo.coordinates[1], location.geo.coordinates[0])
     @points.push(point)
     marker = new L.Marker(point)
-    popup = GNIP.activityList.renderActivity(activity, $('#tweet-popup-template').find('.tweet'))[0]
-    marker.bindPopup(popup, {
+    marker.bindPopup(Handlebars.templates.tweet(activity), {
       maxWidth: 500,
-      minWidth: 300
+      minWidth: 400
     })
     @markerLookup[activity.id] = marker
     @markers.addLayer(marker)

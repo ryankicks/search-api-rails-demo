@@ -6,10 +6,31 @@ html
 body
   font-family: "helvetica neue", sans-serif
   font-weight: 300
+  font-size: 14px
+  line-height: 20px
   margin: 0
+
+a
+  color: #2f7ed8
+  text-decoration: none
+
+.container
+  margin-left: auto
+  margin-right: auto
+  max-width: 1170px
+
+.page-header, .row
+  &:before, &:after
+    display: table
+    content: ""
+    line-height: 0
+
+.row
+  margin-left: -30px
 
 .page-header
   background-color: #f7f7f7
+  border-bottom: 1px solid #eee
   margin: 0
   padding: 10px
   .brand
@@ -25,12 +46,34 @@ h1, h2, h3, h4, h5, h6
   color: #666
   font-family: "helvetica neue", sans-serif
   font-weight: 300
+  line-height: 20px
   margin: 0
+  text-rendering: optimizelegibility
+
+h1, h2, h3
+  line-height: 40px
+
+h2
+  font-size: 31.5px
+
+h5
+  font-size: 14px
 
 .search-container
   margin: 0 auto
   height: 100%
   width: 600px
+
+.icon-search
+  background-image: image_url("/assets/glyphicons-halflings-f1af67934930aceb3959ca7cabdb588c.png")
+  background-position: -48px 0
+  background-repeat: no-repeat
+  display: inline-block
+  width: 14px
+  height: 14px
+  line-height: 14px
+  vertical-align: text-top
+  margin-top: 1px
 
 .search-form
   +transition((margin 400ms ease))
@@ -105,98 +148,9 @@ h1, h2, h3, h4, h5, h6
   @media only screen and (min-height: 1400px)
     height: 928px
 
-.template
-  display: none
-
-.activity
-  border: 1px solid #ccc
-  border-width: 0 0 1px 0
-  clear: both
-  padding: 9px 12px
-  &:hover
-    background-color: #F6F6F6
-    .activity-details-label
-      color: #0A8CCE
-  .content
-    margin-left: 58px
-    min-height: 58px
-  .avatar
-    border-radius: 9px
-    float: left
-    margin-top: 3px
-    margin-left: -58px
-    width: 50px
-  .klout-score
-    color: #FFF
-    font-size: 12px
-    font-weight: bold
-    text-align: center
-    background: image-url("icons/klout_score_flag-24x24.png") no-repeat
-    background-size: 24px 24px
-    float: left
-    height: 24px
-    margin-top: 39px
-    margin-left: -68px
-    width: 24px
-  .klout-score:empty
-    display: none
-  .fullname
-    color: #333
-  .username
-    color: #999
-  .time
-    color: #bbb
-    float: right
-    font-size: 12px
-  .tweet-text
-    white-space: pre-wrap
-    word-wrap: break-word
-  .activity-details-label
-    color: #999
-    cursor: pointer
-    font-size: 12px
-    margin-top: 10px
-  .activity-details-content
-    display: none
-    margin-top: 10px
-  .klout-topics
-    font-size: 12px
-    overflow: hidden
-    margin-left: 30px
-    height: 20px
-
-    &:before
-      content: " "
-      background: image-url("icons/klout-26x20.png") no-repeat
-      background-size: 26px 20px
-      position: absolute
-      width: 26px
-      height: 20px
-      margin-left: -30px
-
-    &:empty
-      display: none
-  .profile-location
-    font-size: 12px
-    overflow: hidden
-    height: 20px
-
-    &:before
-      display: inline-block
-      content: ""
-      background: image-url("icons/pushpin-26x20.png") no-repeat
-      background-size: 26px 20px
-      width: 26px
-      height: 20px
-
-    &:empty
-      display: none
-
-.leaflet-popup-content .activity
-  border: none
-
-  &:hover
-    background: white
+.activities-list .tweet
+  border-bottom: 1px solid #e8e8e8
+  padding-bottom: 5px
 
 .no-activities
   color: #666
