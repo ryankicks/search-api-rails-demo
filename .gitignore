@@ -11,6 +11,8 @@ public/stylesheets/**/*
 public/assets/source_maps
 spec/reports
 spec/tmp
+spec/javascripts/*.js
+spec/javascripts/*.map
 log/*
 tmp/*
 
