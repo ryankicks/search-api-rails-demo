@@ -76,8 +76,9 @@ h5
   margin-top: 1px
 
 .search-form
-  +transition((margin 400ms ease))
-  margin: 100px auto 10px
+  +transition((all 400ms ease))
+  +transform(translateY(70px))
+  margin: 30px auto 10px
   position: relative
   height: 30px
   input
@@ -98,7 +99,7 @@ h5
     font-style: italic
     margin-top: 0.3rem
   &.collapsed
-    margin: 30px auto 10px
+    +transform(translateY(0px))
 
 .activities-header, .chart-header, .activities-list, .activities-chart, .map-container
   opacity: 0.01
