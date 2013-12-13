@@ -198,6 +198,12 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
     sinon-rails (1.7.3)
       railties (>= 3.1)
     slop (3.4.6)
@@ -262,6 +268,8 @@ DEPENDENCIES
   rest-client (~> 1.6.7)
   rspec-rails
   sass-rails
+  simplecov (~> 0.7.1)
+  simplecov-rcov (~> 0.2.3)
   sinon-rails
   therubyracer
   thin (~> 1.5.1)

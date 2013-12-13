@@ -41,3 +41,8 @@ group :development do
   gem "capistrano", "2.15.4"
   gem "capistrano-ext", "1.2.1"
 end
+
+group :test do
+  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'simplecov-rcov', '~> 0.2.3', require: false
+end
