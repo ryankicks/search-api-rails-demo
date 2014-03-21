@@ -28,8 +28,6 @@ GEM
     addressable (2.3.5)
     arel (4.0.1)
     atomic (1.1.14)
-    bootstrap-sass (2.3.2.2)
-      sass (~> 3.2)
     builder (3.1.4)
     capistrano (2.15.4)
       highline
@@ -246,7 +244,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.3.2.0)
   capistrano (= 2.15.4)
   capistrano-ext (= 1.2.1)
   coffee-rails

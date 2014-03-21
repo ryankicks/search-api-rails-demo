@@ -11,7 +11,6 @@ gem "jquery-rails"
 gem "sass-rails"
 gem "haml-rails"
 gem "coffee-rails"
-gem "bootstrap-sass", "~> 2.3.2.0"
 gem "uglifier"
 
 group :development, :test do
