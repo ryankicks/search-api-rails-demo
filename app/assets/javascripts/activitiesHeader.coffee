@@ -17,6 +17,8 @@ this.ActivitiesHeader = class ActivitiesHeader extends ViewBase
 
   updateCount: (evt, opts) =>
     @$el.find('.js-activities-count').text("Last #{opts['data'].length}, ") if opts['data']
+    @$el.find('.js-activities-download-csv').html("[<a href='/download/?q=' target='_target'>Download CSV</a>]") if opts['data']
+    @$el.find('.js-activities-download-json').html("[<a href='/download/?q=' target='_target'>Download JSON</a>]") if opts['data']
 
   updateDateRange: (evt, opts) =>
     subheaderEl = @$el.find('.js-activities-date-range')

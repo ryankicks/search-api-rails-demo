@@ -1,4 +1,4 @@
-require "gnip/search_service"
+require 'gnip/search_service'
 
 class SearchController < ApplicationController
   rescue_from 'Gnip::InvalidSearchException' do |e|
@@ -14,6 +14,10 @@ class SearchController < ApplicationController
 
   def counts
     render_json get_search_results('counts_for', params)
+  end
+
+  def downloads
+    render_json get_search_results('downloads_for', params)
   end
 
   private

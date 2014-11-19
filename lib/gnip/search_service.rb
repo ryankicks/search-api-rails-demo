@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'base64'
 require 'rest-client'
 require 'yajl'
@@ -18,6 +20,14 @@ module Gnip
       parse_activities response
     end
 
+    def self.activities_for(query, **args)
+      data = {query: query, publisher: 'twitter', maxResults: 100}
+      data[:maxResults] = args[:max] if args[:max]
+      data[:fromDate], data[:toDate] = datestamp_range(args[:from], args[:to]) if args.values_at(:from, :to).all?
+      response = http_post(SEARCH_ENDPOINT, Yajl::Encoder.encode(data))
+      parse_activities response
+    end
+    
     def self.counts_for(query, **args)
       data = {query: query, publisher: 'twitter', bucket: 'hour'}
       data[:bucket] = args[:bucket] if args[:bucket]

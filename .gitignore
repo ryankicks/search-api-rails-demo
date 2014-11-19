@@ -15,6 +15,7 @@ spec/javascripts/*.js
 spec/javascripts/*.map
 log/*
 tmp/*
+config/environment.rb
 
 # YARD
 .yardoc
