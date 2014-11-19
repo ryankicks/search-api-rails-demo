@@ -20,12 +20,32 @@ module Gnip
       parse_activities response
     end
 
-    def self.activities_for(query, **args)
-      data = {query: query, publisher: 'twitter', maxResults: 100}
+    def self.downloads_for(query, **args)
+
+      data = {query: query, publisher: 'twitter', maxResults: 10}
       data[:maxResults] = args[:max] if args[:max]
       data[:fromDate], data[:toDate] = datestamp_range(args[:from], args[:to]) if args.values_at(:from, :to).all?
-      response = http_post(SEARCH_ENDPOINT, Yajl::Encoder.encode(data))
-      parse_activities response
+      
+      json = ''
+      page = 1
+      
+      loop do  
+
+        response = http_post(SEARCH_ENDPOINT, Yajl::Encoder.encode(data))
+
+        parser = Yajl::Parser.new(symbolize_keys: true)
+        json = parser.parse response
+        token = json[:next]
+        
+        break if not token
+
+        page = page + 1
+        data[:next] = json[:next]
+
+      end 
+      
+    rescue Yajl::ParseError => e
+      raise Gnip::SearchException.new("Could not parse JSON from /downloads endpoint: #{e.message}.\nJSON:\n#{json}\n")
     end
     
     def self.counts_for(query, **args)
