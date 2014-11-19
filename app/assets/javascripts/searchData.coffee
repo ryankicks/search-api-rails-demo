@@ -5,7 +5,7 @@ this.SearchData = class SearchData
   bindEvents: (evtRouter) =>
     chartCallback = (data) -> evtRouter.trigger('gnip:chartdataloaded', data)
     chartErrback = (jqXHR) -> evtRouter.trigger('gnip:chartdataerror', jqXHR)
-    activitiesCallback = (data) -> evtRouter.trigger('gnip:activitiesloaded', {data: data})
+    activitiesCallback = (data) -> evtRouter.trigger('gnip:activitiesloaded', {data: data, q: 'dummy'})
     activitiesErrback = (jqXHR) -> evtRouter.trigger('gnip:activitieserror', jqXHR)
     evtRouter.on 'gnip:searchsubmitted', (evt, query) =>
       @loadChartDataFor "#{query}", chartCallback, chartErrback
