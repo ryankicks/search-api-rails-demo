@@ -3,6 +3,7 @@ this.ActivitiesHeader = class ActivitiesHeader extends ViewBase
 
   bindEvents: (evtRouter) =>
     evtRouter.on 'gnip:activitiesloaded', @show
+    evtRouter.on 'gnip:activitiesloaded', @showDownload
     evtRouter.on 'gnip:activitiesloaded', @updateCount
     evtRouter.on 'gnip:searchsubmitted', @hide
     evtRouter.on 'gnip:timeboundsupdated', @hide
@@ -15,9 +16,11 @@ this.ActivitiesHeader = class ActivitiesHeader extends ViewBase
   show: (evt, opts) =>
     @$el.addClass('flip-in') if opts['data'].length
 
+  showDownload: (evt, opts) =>
+    @$el.find('.js-activities-download-json').html("<a href='/download/?#{opts['q']}' target='_target'>Download JSON</a>") if opts['q']
+
   updateCount: (evt, opts) =>
     @$el.find('.js-activities-count').text("Last #{opts['data'].length}, ") if opts['data']
-    @$el.find('.js-activities-download-json').html("<a href='/download/?q=#{opts['q']}' target='_target'>Download JSON</a>") if opts['q']
 
   updateDateRange: (evt, opts) =>
     subheaderEl = @$el.find('.js-activities-date-range')
