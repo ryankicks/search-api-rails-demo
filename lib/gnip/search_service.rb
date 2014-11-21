@@ -42,8 +42,8 @@ module Gnip
         token = json[:next]
         
         results.each do |x|
-        	stream.write x
-        	puts x
+        	stream.write JSON.generate(x)
+        	stream.write "\n"
 		end
 
         break if not token
