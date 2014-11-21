@@ -22,9 +22,7 @@ module Gnip
 
     def self.downloads_for(query, **args)
 
-	  http_response = args[:response]
-      http_response.headers['Content-Type'] = 'application/octet-stream'
-      http_response.headers['Content-Disposition'] = 'attachment; filename="results.jsonr"'
+	  stream = args[:stream]
 
       data = {query: query, publisher: 'twitter', maxResults: 500}
       data[:maxResults] = args[:max] if args[:max]
@@ -40,18 +38,22 @@ module Gnip
         parser = Yajl::Parser.new(symbolize_keys: true)
         json = parser.parse response
         
-        http_response.stream.write json[:results]
-        http_response.stream.write "\n"
+        results = json[:results]
+        token = json[:next]
+        
+        results.each do |x|
+        	stream.write x
+        	puts x
+		end
 
-        break if not json[:next]
+        break if not token
 
-        data[:next] = json[:next]
+        data[:next] = token
         page = page + 1
-        puts page
 
       end 
       
-      http_response.stream.close
+      stream.close
       
     rescue Yajl::ParseError => e
       raise Gnip::SearchException.new("Could not parse JSON from /downloads endpoint: #{e.message}.\nJSON:\n#{json}\n")

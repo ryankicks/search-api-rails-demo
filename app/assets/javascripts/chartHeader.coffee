@@ -12,6 +12,9 @@ this.ChartHeader = class ChartHeader extends ViewBase
       subheaderEl.text("#{window.moment().subtract('days', window.GNIP.constants.DEFAULT_SEARCH_IN_DAYS).format(@dateFormat)} - #{window.moment().format(@dateFormat)}")
     else
       subheaderEl.text("#{window.moment(opts.min).format(@dateFormat)} - #{window.moment(opts.max).format(@dateFormat)}")
+      
+    subheaderCountEl = @$el.find('.subheader-count')
+    subheaderCountEl.text("Total Count: " + 0);
 
   showHeader: (evt, opts) =>
     @show() unless opts['data'].every((e) -> e == 0)

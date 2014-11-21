@@ -24,7 +24,11 @@ class SearchController < ApplicationController
   private
 
   def get_search_results method_name, params
-    Gnip::SearchService.send method_name, params[:q], response: response, from: params[:from], to: params[:to], max: params[:max]
+  
+	response.headers['Content-Type'] = 'application/octet-stream'
+	response.headers['Content-Disposition'] = 'attachment; filename="results.jsonr"'
+
+    Gnip::SearchService.send method_name, params[:q], stream: response.stream, from: params[:from], to: params[:to], max: params[:max]
   end
 
   def render_json hash

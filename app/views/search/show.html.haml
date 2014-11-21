@@ -10,6 +10,7 @@
   %header.chart-header#chart-header
     %h2 Activity Volume
     %h5.subheader
+    %h5.subheader-count
   .chart-container#chart-container
     .activities-chart#activities-chart
   %header.activities-header#activities-header
@@ -18,7 +19,8 @@
     %h5.subheader
       %span.js-activities-count
       %span.js-activities-date-range
-      %span.js-activities-download-json{class: 'pull-right'}
+      .activities-download-controls{class: 'flip-in'}
+      %a.toggle-activity-download{href: '#'} Download JSON
   .map-container#map-container
     .activities-map-controls
       %a.toggle-activity-map{href: '#'} Show Map

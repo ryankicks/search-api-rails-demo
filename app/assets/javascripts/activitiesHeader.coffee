@@ -17,7 +17,7 @@ this.ActivitiesHeader = class ActivitiesHeader extends ViewBase
     @$el.addClass('flip-in') if opts['data'].length
 
   showDownload: (evt, opts) =>
-    @$el.find('.js-activities-download-json').html("<a href='/download/?#{opts['q']}' target='_target'>Download JSON</a>") if opts['q']
+    @$el.find('.toggle-activity-download').html("<a href='/downloads/?#{opts['q']}' target='_target'>Download JSON</a>")
 
   updateCount: (evt, opts) =>
     @$el.find('.js-activities-count').text("Last #{opts['data'].length}, ") if opts['data']

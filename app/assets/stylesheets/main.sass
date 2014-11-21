@@ -95,7 +95,7 @@ h5
   &.collapsed
     +transform(translateY(0px))
 
-.activities-header, .chart-header, .activities-list, .activities-chart, .map-container
+.activities-header, .chart-header, .activities-list, .activities-chart, .map-container, .download-container
   opacity: 0.01
   +perspective(400px)
   +perspective-origin(50% 50%)
@@ -153,6 +153,7 @@ h5
   line-height: 3rem
   text-align: center
 
-.pull-right
-  float: right
-  margin-left: 10px
+.js-activities-download
+  position: absolute
+  top: -25px
+  right: 0

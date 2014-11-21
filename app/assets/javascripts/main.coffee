@@ -19,10 +19,10 @@ $ ->
   window.GNIP =
     constants:
       ACTIVITY_LIST_ENABLED: true
-      ACTIVITY_MAP_ENABLED: false
+      ACTIVITY_MAP_ENABLED: true
       CHART_ENABLED: true
       DEFAULT_SEARCH_IN_DAYS: 30
-      MAPBOX_API_KEY: 'YOUR_MAPBOX_API_KEY'
+      MAPBOX_API_KEY: 'pk.eyJ1IjoidHdpdHRlcmRldiIsImEiOiJFOXpuRGk4In0.nE4WRDEnl2qz3hMQ7q7h5g'
 
   window.GNIP.activitiesHeader = new ActivitiesHeader($('#activities-header')) if window.GNIP.constants.ACTIVITY_LIST_ENABLED
   window.GNIP.activityList = new ActivityList($('#activities-list')) if window.GNIP.constants.ACTIVITY_LIST_ENABLED
